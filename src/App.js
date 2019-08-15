@@ -69,17 +69,31 @@ const pers = [
 
 const numero = Math.floor(Math.random() * 9) + 0
 
-function cartaRandom(item) {
-  return(<Carta key={item.key} nombre={item.nombre} imagen={item.imagen} esMisteriosa={true} />)
-}
+class App extends React.Component {
 
-function App() {
-  return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
-      <Tablero color={true} pers={pers} />
-      {cartaRandom(pers[numero])}
-    </div>
-  );
+    constructor(props) {
+        super(props);
+        this.state = {
+            jugador: false,
+
+        };
+    }
+
+    cartaRandom(item) {
+      return(<Carta key={item.key} nombre={item.nombre} imagen={item.imagen} esMisteriosa={true} />)
+    }
+
+    render() {
+        return (
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+                    <Tablero color={this.state.jugador} pers={pers} />
+                    {this.cartaRandom(pers[numero])}
+                </div>
+                <button>hola</button>
+            </div>
+        );
+    }
 }
 
 export default App;
