@@ -1,0 +1,12 @@
+.mainView {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    border-radius: 5px;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
