@@ -1,6 +1,4 @@
 .deshabilitada{
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
-    transition: 2s;
-    transform: rotate(180deg);
 }

@@ -6,21 +6,17 @@ class Carta extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            habilitada: true,
         };
 
         this.handleClick = this.handleClick.bind(this);
       }
 
       handleClick() {
-        this.setState(state => ({
-            habilitada: !state.habilitada
-        }));
+        this.props.cartaTocada(this.props.identificador, this.props.jugador);
       }
 
     render() {
-        const habilitada = this.state.habilitada ? "habilitada" : "deshabilitada";
-        console.log(habilitada)
+        const habilitada = !this.props.descartado ? "habilitada" : "deshabilitada";
         const formaCarta = this.props.esMisteriosa ?
             <div style={{ textAlign: 'center', marginBottom: '2%', borderRadius: '20px' }} className={habilitada} >
                 <img src={this.props.imagen} style={{ borderRadius: 10 }} alt="card" height="200" width="200" />
